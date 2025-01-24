@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import pp1 from "../public/pp4.jpg";
 import ThemeToggle from "../components/ui/theme-toggle";
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button";
 import { FaGithub, FaLinkedin , FaTwitter} from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
@@ -112,7 +112,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-                I am a second year student at the BI Norwegian Business School, pursuing a Bachelor's degree in Data Science. My academic journey has been marked by a deep passion for data analysis and a commitment to leveraging data-driven insights to drive meaningful change.
+                I am a second year student at the BI Norwegian Business School, pursuing a Bachelor&apos;s degree in Data Science. My academic journey has been marked by a deep passion for data analysis and a commitment to leveraging data-driven insights to drive meaningful change.
                 </p>
              </div>   
           </motion.section>
