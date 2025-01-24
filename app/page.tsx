@@ -6,8 +6,7 @@ import pp1 from "../public/pp4.jpg";
 import ThemeToggle from "../components/ui/theme-toggle";
 import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaFacebook, FaTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin , FaTwitter} from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 import image1 from "../public/1.png";
 import image2 from "../public/2.png";
