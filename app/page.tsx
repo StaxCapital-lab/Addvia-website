@@ -82,7 +82,7 @@ export default function Home() {
                 <FaLinkedin className=" w-6 h-6" /> 
             </Link>
 
-            <Link href="https://github.com" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:white transition-colors transition-transform duration-10000 hover:scale-105 cursor-pointer">
+            <Link href="/page1" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:white transition-colors transition-transform duration-10000 hover:scale-105 cursor-pointer">
                 <FaGithub className=" w-6 h-6" /> 
             </Link>
 
