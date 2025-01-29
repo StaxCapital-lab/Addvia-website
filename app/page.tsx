@@ -170,21 +170,6 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 cursor-pointer">
-                <CardContent className="p-4">
-                  <Image src={image3} alt="Project 1" className="rounded-lg mb-4" />
-
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-medium">Project 3</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Next.js, MySQL, Drizzler</p>
-                    </div>
-
-                    <Button variant="ghost" size="icon">→</Button>
-                  </div>
-                </CardContent>
-              </Card>
-
 
             </div>
           
@@ -203,6 +188,25 @@ export default function Home() {
           
           >
             <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">Experience</h2>
+
+
+            <div className="space-y-8">
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Jan,2025 - Present</p>
+                  <p className="font-medium">Research Assistant - Intern | Remote</p>
+                  <p className="text-blue-600 dark:text-blue-400">DataSEARCH, University of Moratuwa</p>
+                </div>
+              </div>
+              
+              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
+                Collaborating with a supervisor at DataSEARCH to develop a research publication, addressing a real-world data science
+                problem through comprehensive analysis of a selected dataset. Executing end-to-end data analysis processes, including data cleaning,preprocessing,feature engineering,and model building, leveraging advanced statistical and machine learning techniques. Interpreting and visualizing data-driven insights to identify actionable solutions, presenting results in a clear, structured
+                manner for research dissemination and potential implementation.
+              </p>
+            </div>
+
+
 
             <div className="space-y-8">
               <div className="flex items-center justify-between">
@@ -269,22 +273,7 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="space-y-8">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">July,2024 - Present</p>
-                  <p className="font-medium">Logistics Manager</p>
-                  <p className="text-blue-600 dark:text-blue-400">BISO Charity</p>
-                </div>
-              </div>
-              
-              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-                I am Kesara Rathnasiri, a passionate and experienced System Engineer with a strong background in the field. With a solid foundation in system administration, I have honed my skills in managing and optimizing complex IT infrastructures. My expertise lies in designing and implementing robust systems that ensure optimal performance and reliability.
-              </p>
-            </div>
-
-
-
+        
 
             <p className="text-grey-500">© 2025 Kesara Rathnasiri</p>
 
