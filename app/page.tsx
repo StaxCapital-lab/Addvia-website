@@ -91,7 +91,7 @@ export default function Home() {
 
             <Button className="rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white transition-transform hover: scale-105 cursor-pointer"> Resume</Button>
 
-            <Link href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:white transition-colors transition-transform duration-10000 hover:scale-105 cursor-pointer">
+            <Link href="https://www.linkedin.com/in/kesara03"  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:white transition-colors transition-transform duration-10000 hover:scale-105 cursor-pointer">
                 <FaLinkedin className=" w-6 h-6" /> 
             </Link>
 
@@ -200,7 +200,11 @@ export default function Home() {
               
               <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
                 Collaborating with a supervisor at DataSEARCH to develop a research publication, addressing a real-world data science
-                problem through comprehensive analysis of a selected dataset. Executing end-to-end data analysis processes, including data cleaning,preprocessing,feature engineering,and model building, leveraging advanced statistical and machine learning techniques. Interpreting and visualizing data-driven insights to identify actionable solutions, presenting results in a clear, structured
+                problem through comprehensive analysis of a selected dataset.
+                
+                Executing end-to-end data analysis processes, including data cleaning, preprocessing, feature engineering, and model building leveraging advanced statistical and machine learning techniques. 
+                
+                Interpreting and visualizing data-driven insights to identify actionable solutions, presenting results in a clear, structured
                 manner for research dissemination and potential implementation.
               </p>
             </div>
@@ -230,7 +234,7 @@ export default function Home() {
                 </div>
               </div>
 
-                <div className="space-y-1">
+                <div className="space-y-2">
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
                   - Conducting in-depth research and financial analysis of companies, assessing market position, financial health, and growth potential to support investment decisions.
                 </p>
@@ -253,7 +257,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="space-y-1">
+              <div className="space-y-2">
               <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
                 - Managed the Financial operations of the Data Science for Business academic association, ensuring accurate and timely
                 budgeting for 120+ students&apos; events activities. 
@@ -279,7 +283,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="space-y-1">
+              <div className="space-y-2">
               <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
               - Coordinated with the Manger to ensure smooth execution of events, managing logistics from planning to implementation. 
               </p>
