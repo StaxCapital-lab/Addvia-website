@@ -6,7 +6,7 @@ import pp1 from "../public/pp4.jpg";
 import ThemeToggle from "../components/ui/theme-toggle";
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button";
-import { FaGithub, FaLinkedin , FaTwitter} from "react-icons/fa";
+import { FaGithub, FaLinkedin , FaEnvelope } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 import image1 from "../public/10.png";
 import image2 from "../public/11.png";
@@ -99,8 +99,11 @@ export default function Home() {
                 <FaGithub className=" w-6 h-6" /> 
             </Link>
 
-            <Link href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:white transition-colors transition-transform duration-10000 hover:scale-105 cursor-pointer">
-              <FaTwitter className=" w-6 h-6" />
+            <Link
+                href="mailto:kesararathnasiri@gmail.com" 
+                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:white transition-colors transition-transform duration-10000 hover:scale-105 cursor-pointer"
+              >
+                <FaEnvelope className="w-6 h-6" />
               </Link>
 
           </motion.div>
@@ -234,6 +237,7 @@ export default function Home() {
                 </div>
               </div>
 
+
                 <div className="space-y-2">
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
                   - Conducting in-depth research and financial analysis of companies, assessing market position, financial health, and growth potential to support investment decisions.
@@ -247,6 +251,9 @@ export default function Home() {
               </div>
 
             </div>
+
+
+
 
             <div className="space-y-8">
               <div className="flex items-center justify-between">
