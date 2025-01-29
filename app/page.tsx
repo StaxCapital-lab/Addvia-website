@@ -276,6 +276,18 @@ export default function Home() {
 
 
            </motion.section>
+
+                {/* Scroll to Top Button */}
+            <motion.button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="fixed bottom-4 right-4 p-3 rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white shadow-lg hover:scale-105 transition-transform z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              aria-label="Scroll to top"
+            >
+              ↑
+            </motion.button>
         
         </main>
       </div>
