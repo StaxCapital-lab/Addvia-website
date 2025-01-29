@@ -10,7 +10,6 @@ import { FaGithub, FaLinkedin , FaTwitter} from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 import image1 from "../public/10.png";
 import image2 from "../public/11.png";
-import image3 from "../public/3.png";
 import { useState, useEffect } from "react";
 
 
