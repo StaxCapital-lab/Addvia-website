@@ -43,7 +43,7 @@ export default function Home() {
           transition={{ duration: 0.9 }}
           className="space-y-1">
             <h1 className="text-5xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">Kesara Rathnasiri</h1>
-            <p className="text-grey-600 dark:text-gray-400">Data Enthusiast & Cloud Solutions Expert</p>
+            <p className="text-grey-600 dark:text-gray-400">Data Scientist & Cloud Solutions Expert</p>
             <p className="text-grey-600 dark:text-gray-400">Data Science @ BI</p>
           </motion.div>
 
@@ -213,17 +213,17 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-                ●	Conducting in-depth research and financial analysis of companies, assessing market position, financial health, and growth potential to support investment decisions. 
-              </p>
-
-              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-              ●	Collaborating with a team of 3 other Junior Analysts and a Senior Analyst to compile comprehensive investment reports and develop persuasive investment pitches. 
-              </p>
-
-              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-              ●	Presenting recommendations for company inclusion in the fund&apos;s portfolio to aid strategic investment decisions
-              </p>
+                <div className="space-y-1">
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  ● Conducting in-depth research and financial analysis of companies, assessing market position, financial health, and growth potential to support investment decisions.
+                </p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  ● Collaborating with a team of 3 other Junior Analysts and a Senior Analyst to compile comprehensive investment reports and develop persuasive investment pitches.
+                </p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  ● Presenting recommendations for company inclusion in the fund&apos;s portfolio to aid strategic investment decisions
+                </p>
+              </div>
 
             </div>
 
