@@ -193,24 +193,57 @@ export default function Home() {
 
 
             <div className="space-y-8">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Jan,2025 - Present</p>
-                  <p className="font-medium">Research Assistant - Intern | Remote</p>
-                  <p className="text-blue-600 dark:text-blue-400">DataSEARCH, University of Moratuwa</p>
+                <div className="flex items-center justify-between">
+                  <div className="space-y-1">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Jan,2025 - Present</p>
+                    <p className="font-medium">Research Assistant - Intern | Remote</p>
+                    <p className="text-blue-600 dark:text-blue-400">DataSEARCH, University of Moratuwa</p>
+                  </div>
+                </div>
+                
+                {/* First Paragraph - No Indentation */}
+                <p className="text-gray-600 text-sm dark:text-gray-400">
+                  Collaborating with a supervisor at DataSEARCH to develop a research publication addressing a real-world data science problem. Conducting end-to-end data analysis, leveraging advanced statistical and machine learning techniques to derive actionable insights from complex datasets.
+                </p>
+
+                <div className="space-y-2">
+                {/* Indented Sections */}
+                <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
+                  textIndent: '-1.2em',
+                  paddingLeft: '1.2em'
+                }}>
+                  - Identifying and defining a real-world data science problem, contributing to the development of a research publication aimed at addressing industry-relevant challenges.
+                </p>
+
+                <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
+                  textIndent: '-1.2em',
+                  paddingLeft: '1.2em'
+                }}>
+                  - Executing comprehensive data analysis processes, including data cleaning, preprocessing, feature engineering, and model building, ensuring high-quality and reliable results.
+                </p>
+
+                <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
+                  textIndent: '-1.2em',
+                  paddingLeft: '1.2em'
+                }}>
+                  - Applying machine learning algorithms and statistical methods to analyze datasets, uncovering patterns and trends that inform data-driven decision-making.
+                </p>
+
+                <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
+                  textIndent: '-1.2em',
+                  paddingLeft: '1.2em'
+                }}>
+                  - Creating clear and impactful visualizations to present findings, enabling stakeholders to easily interpret complex data insights.
+                </p>
+
+                <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
+                  textIndent: '-1.2em',
+                  paddingLeft: '1.2em'
+                }}>
+                  - Preparing and structuring research results for publication, contributing to the academic community and potential real-world implementation.
+                </p>
                 </div>
               </div>
-              
-              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-                Collaborating with a supervisor at DataSEARCH to develop a research publication, addressing a real-world data science
-                problem through comprehensive analysis of a selected dataset.
-                
-                Executing end-to-end data analysis processes, including data cleaning, preprocessing, feature engineering, and model building leveraging advanced statistical and machine learning techniques. 
-                
-                Interpreting and visualizing data-driven insights to identify actionable solutions, presenting results in a clear, structured
-                manner for research dissemination and potential implementation.
-              </p>
-            </div>
 
 
 
@@ -223,83 +256,123 @@ export default function Home() {
                 </div>
               </div>
               
-              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-                I am Kesara Rathnasiri, a passionate and experienced System Engineer with a strong background in the field. With a solid foundation in system administration, I have honed my skills in managing and optimizing complex IT infrastructures. My expertise lies in designing and implementing robust systems that ensure optimal performance and reliability.
+              <div className="space-y-2">
+              <p className="text-gray-600 text-sm dark:text-gray-400">
+                As the Class Representative for the Bachelor of Data Science for Business program, I serve as the primary liaison between students and faculty, ensuring effective communication and fostering a collaborative academic environment. In this role, I actively gather and articulate student feedback, address concerns, and work closely with academic staff to enhance the overall learning experience.
               </p>
+
+              {/* Indented Sections */}
+              <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
+                textIndent: '-1.2em',
+                paddingLeft: '1.2em'
+              }}>
+                - Facilitating Communication: Serving as the primary point of contact between students and faculty, I organize regular meetings, present student feedback, and ensure timely resolution of academic and administrative concerns.
+              </p>
+
+              <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
+                textIndent: '-1.2em',
+                paddingLeft: '1.2em'
+              }}>
+                - Advocating for Student Needs: By systematically collecting and conveying student input, I contribute to curriculum adjustments and program improvements that align with both academic objectives and industry standards.
+              </p>
+              </div>
             </div>
 
-            <div className="space-y-8">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Jul,2024 - Present</p>
-                  <p className="font-medium">Junior Analyst</p>
-                  <p className="text-blue-600 dark:text-blue-400">BISO Invest Capital Management</p>
-                </div>
-              </div>
+            
 
+
+            <div className="space-y-8">
+                <div className="flex items-center justify-between">
+                  <div className="space-y-1">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Jul,2024 - Present</p>
+                    <p className="font-medium">Junior Analyst</p>
+                    <p className="text-blue-600 dark:text-blue-400">BISO Invest Capital Management</p>
+                  </div>
+                </div>
 
                 <div className="space-y-2">
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Conducting in-depth research and financial analysis of companies, assessing market position, financial health, and growth potential to support investment decisions.
-                </p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Collaborating with a team of 3 other Junior Analysts and a Senior Analyst to compile comprehensive investment reports and develop persuasive investment pitches.
-                </p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Presenting recommendations for company inclusion in the fund&apos;s portfolio to aid strategic investment decisions
-                </p>
-              </div>
-
-            </div>
-
-
-
-
-            <div className="space-y-8">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Jul,2024 - Aug,2024</p>
-                  <p className="font-medium">Financial Manager</p>
-                  <p className="text-blue-600 dark:text-blue-400">Data Science for Business Academic Association</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm" style={{ 
+                    textIndent: '-1.2em',
+                    paddingLeft: '1.2em'
+                  }}>
+                    - Conducting in-depth research and financial analysis of companies, assessing market position, financial health, and growth potential to support investment decisions.
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm" style={{ 
+                    textIndent: '-1.2em',
+                    paddingLeft: '1.2em'
+                  }}>
+                    - Collaborating with a team of 3 other Junior Analysts and a Senior Analyst to compile comprehensive investment reports and develop persuasive investment pitches.
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm" style={{ 
+                    textIndent: '-1.2em',
+                    paddingLeft: '1.2em'
+                  }}>
+                    - Presenting recommendations for company inclusion in the fund&apos;s portfolio to aid strategic investment decisions
+                  </p>
                 </div>
               </div>
-              
-              <div className="space-y-2">
-              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-                - Managed the Financial operations of the Data Science for Business academic association, ensuring accurate and timely
-                budgeting for 120+ students&apos; events activities. 
-              </p>
-              
-              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-                - Coordinated with five board members to plan and execute events within budget, including quiz and dinner mingle.
-              </p>
-              
-              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-                - Promoted the association during recruitment and open days to inform students about its role and activities.
-              </p>
 
-              </div>
-            </div>
-
-            <div className="space-y-8">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Aug,2024 - Dec,2024</p>
-                  <p className="font-medium">Logistics Manager</p>
-                  <p className="text-blue-600 dark:text-blue-400">BISO Charity</p>
+            {/* Financial Manager Section */}
+              <div className="space-y-8">
+                <div className="flex items-center justify-between">
+                  <div className="space-y-1">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Jul,2024 - Aug,2024</p>
+                    <p className="font-medium">Financial Manager</p>
+                    <p className="text-blue-600 dark:text-blue-400">Data Science for Business Academic Association</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
+                    textIndent: '-1.2em',
+                    paddingLeft: '1.2em'
+                  }}>
+                    - Managed the Financial operations of the Data Science for Business academic association, ensuring accurate and timely
+                    budgeting for 120+ students&apos; events activities. 
+                  </p>
+                  
+                  <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
+                    textIndent: '-1.2em',
+                    paddingLeft: '1.2em'
+                  }}>
+                    - Coordinated with five board members to plan and execute events within budget, including quiz and dinner mingle.
+                  </p>
+                  
+                  <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
+                    textIndent: '-1.2em',
+                    paddingLeft: '1.2em'
+                  }}>
+                    - Promoted the association during recruitment and open days to inform students about its role and activities.
+                  </p>
                 </div>
               </div>
-              
-              <div className="space-y-2">
-              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-              - Coordinated with the Manger to ensure smooth execution of events, managing logistics from planning to implementation. 
-              </p>
-            
-              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-              - Developed and maintained relationships with vendors and venues, overseeing equipment setup and troubleshooting issues to enhance the overall experience for students.
-              </p>
+
+              {/* Logistics Manager Section */}
+              <div className="space-y-8">
+                <div className="flex items-center justify-between">
+                  <div className="space-y-1">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Aug,2024 - Dec,2024</p>
+                    <p className="font-medium">Logistics Manager</p>
+                    <p className="text-blue-600 dark:text-blue-400">BISO Charity</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
+                    textIndent: '-1.2em',
+                    paddingLeft: '1.2em'
+                  }}>
+                    - Coordinated with the Manger to ensure smooth execution of events, managing logistics from planning to implementation. 
+                  </p>
+                
+                  <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
+                    textIndent: '-1.2em',
+                    paddingLeft: '1.2em'
+                  }}>
+                    - Developed and maintained relationships with vendors and venues, overseeing equipment setup and troubleshooting issues to enhance the overall experience for students.
+                  </p>
+                </div>
               </div>
-            </div>
 
             <p className="text-grey-500">© 2025 Kesara Rathnasiri</p>
 
