@@ -132,8 +132,8 @@ export default function Home() {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="font-medium">Project 1</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Next.js, MySQL, Drizzler</p>
+                      <h3 className="font-medium">Healthcare Analytics Dashboard</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Power BI, DAX, M, Power Query, SQL Server, Excel</p>
                     </div>
 
                     <Button variant="ghost" size="icon">→</Button>
@@ -147,8 +147,8 @@ export default function Home() {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="font-medium">Project 2</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Next.js, MySQL, Drizzler</p>
+                      <h3 className="font-medium">Sales Analytics Dashboard</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Power BI, DAX, Power Query, SQL Server, Excel</p>
                     </div>
 
                     <Button variant="ghost" size="icon">→</Button>
@@ -193,7 +193,21 @@ export default function Home() {
             <div className="space-y-8">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">July,2024 - Present</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Sep,2024 - Present</p>
+                  <p className="font-medium">Class Representative</p>
+                  <p className="text-blue-600 dark:text-blue-400">Bachelor of Data Science for Business</p>
+                </div>
+              </div>
+              
+              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
+                I am Kesara Rathnasiri, a passionate and experienced System Engineer with a strong background in the field. With a solid foundation in system administration, I have honed my skills in managing and optimizing complex IT infrastructures. My expertise lies in designing and implementing robust systems that ensure optimal performance and reliability.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Jul,2024 - Present</p>
                   <p className="font-medium">Junior Analyst</p>
                   <p className="text-blue-600 dark:text-blue-400">BISO Invest Capital Management</p>
                 </div>
@@ -216,7 +230,7 @@ export default function Home() {
             <div className="space-y-8">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">July,2024 - Present</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Jul,2024 - Aug,2024</p>
                   <p className="font-medium">Financial Manager</p>
                   <p className="text-blue-600 dark:text-blue-400">Data Science for Business Academic Association</p>
                 </div>
@@ -230,7 +244,7 @@ export default function Home() {
             <div className="space-y-8">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">July,2024 - Present</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Aug,2024 - Dec,2024</p>
                   <p className="font-medium">Logistics Manager</p>
                   <p className="text-blue-600 dark:text-blue-400">BISO Charity</p>
                 </div>
