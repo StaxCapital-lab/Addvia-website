@@ -201,10 +201,16 @@ export default function Home() {
 
               <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
                 ●	Conducting in-depth research and financial analysis of companies, assessing market position, financial health, and growth potential to support investment decisions. 
-                ●	Collaborating with a team of 3 other Junior Analysts and a Senior Analyst to compile comprehensive investment reports and develop persuasive investment pitches. 
-                ●	Presenting recommendations for company inclusion in the fund’s portfolio to aid strategic investment decisions
-
               </p>
+
+              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
+              ●	Collaborating with a team of 3 other Junior Analysts and a Senior Analyst to compile comprehensive investment reports and develop persuasive investment pitches. 
+              </p>
+
+              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
+              ●	Presenting recommendations for company inclusion in the fund&apos;s portfolio to aid strategic investment decisions
+              </p>
+
             </div>
 
             <div className="space-y-8">
