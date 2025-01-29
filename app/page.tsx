@@ -249,30 +249,11 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="space-y-2">
+              
               <p className="text-gray-600 text-sm dark:text-gray-400">
                 As the Class Representative for the Bachelor of Data Science for Business program, I serve as the primary liaison between students and faculty, ensuring effective communication and fostering a collaborative academic environment. In this role, I actively gather and articulate student feedback, address concerns, and work closely with academic staff to enhance the overall learning experience.
               </p>
-
-              {/* Indented Sections */}
-              <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
-                textIndent: '-1.2em',
-                paddingLeft: '1.2em'
-              }}>
-                - Serving as the primary point of contact between students and faculty, I organize regular meetings, present student feedback, and ensure timely resolution of academic and administrative concerns.
-              </p>
-
-              <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
-                textIndent: '-1.2em',
-                paddingLeft: '1.2em'
-              }}>
-                - By systematically collecting and conveying student input, I contribute to curriculum adjustments and program improvements that align with both academic objectives and industry standards.
-              </p>
-              </div>
             </div>
-
-            
-
 
             <div className="space-y-8">
                 <div className="flex items-center justify-between">
