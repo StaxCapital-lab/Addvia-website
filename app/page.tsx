@@ -8,8 +8,8 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button";
 import { FaGithub, FaLinkedin , FaTwitter} from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
-import image1 from "../public/1.png";
-import image2 from "../public/2.png";
+import image1 from "../public/10.png";
+import image2 from "../public/11.png";
 import image3 from "../public/3.png";
 
 
@@ -42,8 +42,8 @@ export default function Home() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9 }}
           className="space-y-1">
-            <h1 className="text-7xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">Kesara Rathnasiri</h1>
-            <p className="text-grey-600 dark:text-gray-400">Data engineering & Cloud Solutions Expert</p>
+            <h1 className="text-5xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">Kesara Rathnasiri</h1>
+            <p className="text-grey-600 dark:text-gray-400">Data Enthusiast & Cloud Solutions Expert</p>
             <p className="text-grey-600 dark:text-gray-400">Data Science @ BI</p>
           </motion.div>
 
