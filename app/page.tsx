@@ -240,6 +240,21 @@ export default function Home() {
                 I am Kesara Rathnasiri, a passionate and experienced System Engineer with a strong background in the field. With a solid foundation in system administration, I have honed my skills in managing and optimizing complex IT infrastructures. My expertise lies in designing and implementing robust systems that ensure optimal performance and reliability.
               </p>
             </div>
+            
+            <div className="space-y-8">
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">July,2024 - Present</p>
+                  <p className="font-medium">Logistics Manager</p>
+                  <p className="text-blue-600 dark:text-blue-400">BISO Charity</p>
+                </div>
+              </div>
+              
+              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
+                I am Kesara Rathnasiri, a passionate and experienced System Engineer with a strong background in the field. With a solid foundation in system administration, I have honed my skills in managing and optimizing complex IT infrastructures. My expertise lies in designing and implementing robust systems that ensure optimal performance and reliability.
+              </p>
+            </div>
+
 
 
 
