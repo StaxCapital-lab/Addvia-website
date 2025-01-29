@@ -232,13 +232,13 @@ export default function Home() {
 
                 <div className="space-y-1">
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  ● Conducting in-depth research and financial analysis of companies, assessing market position, financial health, and growth potential to support investment decisions.
+                  Conducting in-depth research and financial analysis of companies, assessing market position, financial health, and growth potential to support investment decisions.
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  ● Collaborating with a team of 3 other Junior Analysts and a Senior Analyst to compile comprehensive investment reports and develop persuasive investment pitches.
+                  Collaborating with a team of 3 other Junior Analysts and a Senior Analyst to compile comprehensive investment reports and develop persuasive investment pitches.
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  ● Presenting recommendations for company inclusion in the fund&apos;s portfolio to aid strategic investment decisions
+                  Presenting recommendations for company inclusion in the fund&apos;s portfolio to aid strategic investment decisions
                 </p>
               </div>
 
@@ -253,9 +253,21 @@ export default function Home() {
                 </div>
               </div>
               
+              <div className="space-y-1">
               <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-                I am Kesara Rathnasiri, a passionate and experienced System Engineer with a strong background in the field. With a solid foundation in system administration, I have honed my skills in managing and optimizing complex IT infrastructures. My expertise lies in designing and implementing robust systems that ensure optimal performance and reliability.
+                Managed the Financial operations of the Data Science for Business academic association, ensuring accurate and timely
+                budgeting for 120+ students&apos; events activities. 
               </p>
+              
+              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
+                Coordinated with five board members to plan and execute events within budget, including quiz and dinner mingle.
+              </p>
+              
+              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
+                Promoted the association during recruitment and open days to inform students about its role and activities.
+              </p>
+
+              </div>
             </div>
 
             <div className="space-y-8">
@@ -267,12 +279,16 @@ export default function Home() {
                 </div>
               </div>
               
+              <div className="space-y-1">
               <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-                I am Kesara Rathnasiri, a passionate and experienced System Engineer with a strong background in the field. With a solid foundation in system administration, I have honed my skills in managing and optimizing complex IT infrastructures. My expertise lies in designing and implementing robust systems that ensure optimal performance and reliability.
+              Coordinating with the Manger to ensure smooth execution of events, managing logistics from planning to implementation. 
               </p>
-            </div>
             
-        
+              <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
+              Developing and maintaining relationships with vendors and venues, overseeing equipment setup and troubleshooting issues to enhance the overall experience for students.
+              </p>
+              </div>
+            </div>
 
             <p className="text-grey-500">© 2025 Kesara Rathnasiri</p>
 
