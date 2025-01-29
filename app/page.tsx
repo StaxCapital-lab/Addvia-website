@@ -177,11 +177,6 @@ export default function Home() {
           
           </motion.section>
 
-
-
-
-
-
           <motion.section
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
@@ -245,8 +240,6 @@ export default function Home() {
                 </div>
               </div>
 
-
-
             <div className="space-y-8">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
@@ -266,14 +259,14 @@ export default function Home() {
                 textIndent: '-1.2em',
                 paddingLeft: '1.2em'
               }}>
-                - Facilitating Communication: Serving as the primary point of contact between students and faculty, I organize regular meetings, present student feedback, and ensure timely resolution of academic and administrative concerns.
+                - Serving as the primary point of contact between students and faculty, I organize regular meetings, present student feedback, and ensure timely resolution of academic and administrative concerns.
               </p>
 
               <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
                 textIndent: '-1.2em',
                 paddingLeft: '1.2em'
               }}>
-                - Advocating for Student Needs: By systematically collecting and conveying student input, I contribute to curriculum adjustments and program improvements that align with both academic objectives and industry standards.
+                - By systematically collecting and conveying student input, I contribute to curriculum adjustments and program improvements that align with both academic objectives and industry standards.
               </p>
               </div>
             </div>
