@@ -11,9 +11,23 @@ import { Card, CardContent } from "@/components/ui/card";
 import image1 from "../public/10.png";
 import image2 from "../public/11.png";
 import image3 from "../public/3.png";
+import { useState, useEffect } from "react";
 
 
 export default function Home() {
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+  useEffect(() => {
+    const checkScroll = () => {
+      const isBottom = 
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 500;
+      setShowScrollButton(isBottom);
+    };
+
+    window.addEventListener('scroll', checkScroll);
+    return () => window.removeEventListener('scroll', checkScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
       <div className="mx-auto max-w-xl px-4 py-20">
@@ -277,17 +291,21 @@ export default function Home() {
 
            </motion.section>
 
-                {/* Scroll to Top Button */}
-            <motion.button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="fixed bottom-4 right-4 p-3 rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white shadow-lg hover:scale-105 transition-transform z-50"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              aria-label="Scroll to top"
-            >
-              ↑
-            </motion.button>
+            {/* Scroll to Top Button */}
+                {showScrollButton && (
+              <motion.button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="fixed bottom-4 right-4 p-3 pl-4 pr-5 rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white shadow-lg hover:scale-105 transition-transform z-50 flex items-center gap-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                aria-label="Scroll to top"
+              >
+                <span>↑</span>
+                <span className="text-sm">Scroll to Top</span>
+              </motion.button>
+            )}
         
         </main>
       </div>
