@@ -134,6 +134,45 @@ export default function Home() {
           </motion.section>
 
           <motion.section
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+            className="space-y-8"
+          >
+            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
+              Working Papers
+            </h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-medium text-lg">
+                  ML for Predictive Maintenance of Winter Public Transport Delays in Oslo Hello
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Jan 2025 – Present
+                </p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Supervisor: Dr. Uthayasanker Thayasivam, UOM
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium text-lg">
+                  Predicting Housing Price Volatility in Oslo: Modeling the Impact of Energy
+                  Shocks, Green Policies, and Urban Development using Adaptive Machine
+                  Learning
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Jan 2025 – Present
+                </p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Contributors: Zara Razlan
+                </p>
+              </div>
+            </div>
+          </motion.section>
+
+
+
+          <motion.section
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
