@@ -145,7 +145,7 @@ export default function Home() {
             <div className="space-y-4">
               {/* First Research Paper */}
               <div className="p-4 border-l-4 border-rose-600 bg-gray-50 dark:bg-zinc-800 rounded-lg shadow hover:shadow-lg transition-all">
-                <h3 className="font-medium text-lg italic bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
+              <h3 className="font-medium text-lg">
                   ML for Predictive Maintenance of Winter Public Transport Delays in Oslo
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
