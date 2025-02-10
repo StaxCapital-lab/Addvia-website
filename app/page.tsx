@@ -158,7 +158,7 @@ export default function Home() {
 
               {/* Second Research Paper */}
               <div className="p-4 border-l-4 border-rose-600 bg-gray-50 dark:bg-zinc-800 rounded-lg shadow hover:shadow-lg transition-all">
-                <h3 className="font-medium text-lg italic bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
+              <h3 className="font-medium text-lg italic text-white">
                   Predicting Housing Price Volatility in Oslo: Modeling the Impact of Energy Shocks, Green Policies, and Urban Development using Adaptive Machine Learning
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
