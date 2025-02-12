@@ -10,6 +10,7 @@ import { FaGithub, FaLinkedin , FaEnvelope } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 import image1 from "../public/10.png";
 import image2 from "../public/11.png";
+import image3 from "../public/15.png";
 import { useState, useEffect } from "react";
 
 
@@ -204,8 +205,23 @@ export default function Home() {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="font-medium">Sales Analytics Dashboard</h3>
+                      <h3 className="font-medium">Sales Analytics Dashboard 1</h3>
                       <p className="text-sm text-gray-600 dark:text-gray-400">Power BI, DAX, Power Query, SQL Server, Excel</p>
+                    </div>
+
+                    <Button variant="ghost" size="icon">→</Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 cursor-pointer">
+                <CardContent className="p-4">
+                  <Image src={image3} alt="Project 1" className="rounded-lg mb-4" />
+
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="font-medium">Flight Delay Analysis</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Python & R</p>
                     </div>
 
                     <Button variant="ghost" size="icon">→</Button>
