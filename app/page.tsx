@@ -63,24 +63,20 @@ export default function Home() {
 
 
           <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9 }}
-          className="space-y-3"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9 }}
+            className="space-y-3"
           >
             <h2 className="text-lg font-semibold">Building Scalable Solutions for Tomorrow</h2>
             <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl">
-              Expert in cloud architecture with {" "}
-              <span className="text-black dark:text-white">AWS</span> and {" "}
-              <span className="text-black dark:text-white">Azure</span>. I
-              specalize in designing and implementing large scalable distributed systems. With expertise in{" "}
-              <span className="text-black dark:text-white">Python, Kubernetes and microservices architecture</span>.
-            </p>
-
-            <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl">
-              Beyond technical architecture, Im passionate about Devops practises and building resilient systems that can scale effectively while maintaining high availability and performance
+              I bridge the gap between raw data and impactful solutions by combining expertise in{" "}
+              <span className="text-black dark:text-white">machine learning</span>,{" "}
+              <span className="text-black dark:text-white">data storytelling</span>, and{" "}
+              <span className="text-black dark:text-white">cloud-native systems</span>. My work focuses on transforming complex datasets into actionable insights, whether through predictive models built with Python and TensorFlow, interactive dashboards designed in Power BI, or scalable cloud architectures on AWS/Azure.
             </p>
           </motion.div>
+
 
 
 
@@ -147,7 +143,7 @@ export default function Home() {
               {/* First Research Paper */}
               <div className="p-4 border-l-4 border-rose-600 bg-gray-50 dark:bg-zinc-800 rounded-lg shadow hover:shadow-lg transition-all">
               <h3 className="font-medium text-lg">
-                  ML for Predictive Maintenance of Winter Public Transport Delays in Oslo
+                  Machine Learning for Predictive Maintenance of Winter Public Transport Delays in Oslo
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Jan 2025 – Present
@@ -171,9 +167,6 @@ export default function Home() {
               </div>
             </div>
           </motion.section>
-
-
-
 
           <motion.section
           initial={{ opacity: 0, y: 100 }}
