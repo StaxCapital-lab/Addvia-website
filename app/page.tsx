@@ -77,9 +77,6 @@ export default function Home() {
             </p>
           </motion.div>
 
-
-
-
           <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -162,7 +159,7 @@ export default function Home() {
                   Jan 2025 – Present
                 </p>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Contributors: Zara Razlan
+                  Supervisor: Dr. Emil Aas Stoltenberg, BI | Contributors: Zara Razlan
                 </p>
               </div>
             </div>
