@@ -238,7 +238,7 @@ export default function Home() {
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
                   <p className="text-sm text-gray-600 dark:text-gray-400">March,2025 - Present</p>
-                  <p className="font-medium">Data Science Intern| Contract </p>
+                  <p className="font-medium">Data Science Intern | Contract </p>
                   <p className="text-blue-600 dark:text-blue-400">STAX Capital AS</p>
                 </div>
               </div>
