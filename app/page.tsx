@@ -233,6 +233,22 @@ export default function Home() {
           >
             <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">Experience</h2>
 
+            {/* NEW EXPERIENCE ENTRY - ADDED ABOVE RESEARCH ASSISTANT */}
+            <div className="space-y-8">
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">March,2025 - Present</p>
+                  <p className="font-medium">Data Science Intern| Contract </p>
+                  <p className="text-blue-600 dark:text-blue-400">STAX Capital AS</p>
+                </div>
+              </div>
+              
+              <p className="text-gray-600 text-sm dark:text-gray-400">
+                Leveraging Python and machine learning frameworks to analyze large datasets, design scalable data pipelines, 
+                and generate predictive models and actionable insights that drive strategic decision-making and operational efficiency.
+              </p>
+            </div>
+
 
             <div className="space-y-8">
                 <div className="flex items-center justify-between">
