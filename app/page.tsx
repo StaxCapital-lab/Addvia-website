@@ -1,440 +1,288 @@
 "use client";
 
+import { useState, FormEvent } from "react";
+import { WavyBackground } from "@/components/ui/wavy-background";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { FlipWords } from "@/components/ui/flip-words";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import Image from "next/image";
-import Link from "next/link";
-import pp1 from "../public/pp4.jpg";
-import ThemeToggle from "../components/ui/theme-toggle";
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button";
-import { FaGithub, FaLinkedin , FaEnvelope } from "react-icons/fa";
-import { Card, CardContent } from "@/components/ui/card";
-import image1 from "../public/10.png";
-import image2 from "../public/11.png";
-import image3 from "../public/16.png";
-import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 
 export default function Home() {
-  const [showScrollButton, setShowScrollButton] = useState(false);
+  const [formData, setFormData] = useState({
+    fornavn: "",
+    etternavn: "",
+    epost: "",
+    telefon: "",
+    firma: "",
+    melding: "",
+  });
 
-  useEffect(() => {
-    const checkScroll = () => {
-      const isBottom = 
-        window.innerHeight + window.scrollY >= document.body.offsetHeight - 500;
-      setShowScrollButton(isBottom);
+  const [errors, setErrors] = useState({
+    fornavn: "",
+    etternavn: "",
+    epost: "",
+    telefon: "",
+    firma: "",
+    melding: "",
+  });
+
+  const { ref: formRef, inView: formInView } = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
+  
+
+  const validate = () => {
+    const newErrors = {
+      fornavn: "",
+      etternavn: "",
+      epost: "",
+      telefon: "",
+      firma: "",
+      melding: "",
     };
 
-    window.addEventListener('scroll', checkScroll);
-    return () => window.removeEventListener('scroll', checkScroll);
-  }, []);
+    if (!formData.fornavn.trim()) newErrors.fornavn = "Fornavn er påkrevd.";
+    if (!formData.etternavn.trim()) newErrors.etternavn = "Etternavn er påkrevd.";
+    if (!formData.epost.trim()) {
+      newErrors.epost = "E-post er påkrevd.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.epost)) {
+      newErrors.epost = "Ugyldig e-postadresse.";
+    }
+    if (!formData.telefon.trim()) {
+      newErrors.telefon = "Telefonnummer er påkrevd.";
+    } else if (!/^\+?\d{8,15}$/.test(formData.telefon)) {
+      newErrors.telefon = "Ugyldig telefonnummer.";
+    }
+    if (!formData.firma.trim()) newErrors.firma = "Firma er påkrevd.";
+    if (!formData.melding.trim()) newErrors.melding = "Melding kan ikke være tom.";
+
+    setErrors(newErrors);
+    return Object.values(newErrors).every((e) => e === "");
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" });
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        alert("Melding sendt!");
+        setFormData({
+          fornavn: "",
+          etternavn: "",
+          epost: "",
+          telefon: "",
+          firma: "",
+          melding: "",
+        });
+      } else {
+        alert("Noe gikk galt. Vennligst prøv igjen.");
+      }
+    } catch (error) {
+      console.error("Feil ved innsending:", error);
+      alert("Teknisk feil. Prøv igjen senere.");
+    }
+  };
+
+  const scrollToForm = () => {
+    const el = document.getElementById("kontakt-skjema");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
-      <div className="mx-auto max-w-xl px-4 py-20">
-
-        <motion.header 
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.9 }}
-        
-        className="flex items-center justify-between mb-12">
-          <div className="w-40 h-70  overflow-hidden">
-            <Image
-              src={pp1}
-              alt="profile picture"
-              className="cursor-pointer transition-all duration-300 hover:scale-110"
-            />
-          </div>
-          <ThemeToggle />
-        </motion.header>
-
-
-        <main className="space-y-10">
-          <section className="space-y-10">
-          <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9 }}
-          className="space-y-1">
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">Kesara Rathnasiri</h1>
-            <p className="text-grey-600 dark:text-gray-400">Data Scientist & Cloud Solutions Expert</p>
-            <p className="text-grey-600 dark:text-gray-400">Data Science @ BI</p>
-          </motion.div>
+    <main className="bg-black text-white">
+      <motion.header
+  className="fixed top-0 left-0 w-full z-50 bg-transparent py-4 px-9"
+  initial={{ opacity: 1 }}
+  animate={{ opacity: formInView ? 0 : 1 }}
+  transition={{ duration: 0.5 }}
+>
+  <div className="flex justify-center items-center">
+    <Image
+      src="/logo.png"
+      alt="ADDVIA Logo"
+      width={160}
+      height={40}
+      priority
+    />
+  </div>
+</motion.header>
 
 
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9 }}
-            className="space-y-3"
-          >
-            <h2 className="text-lg font-semibold">Building Scalable Solutions for Tomorrow</h2>
-            <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl">
-              I bridge the gap between raw data and impactful solutions by combining expertise in{" "}
-              <span className="text-black dark:text-white">machine learning</span>,{" "}
-              <span className="text-black dark:text-white">data storytelling</span>, and{" "}
-              <span className="text-black dark:text-white">cloud-native systems</span>. My work focuses on transforming complex datasets into actionable insights, whether through predictive models built with Python and TensorFlow, interactive dashboards designed in Power BI, or scalable cloud architectures on AWS/Azure.
-            </p>
-          </motion.div>
-
-          <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9 }}
-          className="flex items-center gap-5">
-
-            <Button className="rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white transition-transform hover: scale-105 cursor-pointer"> Resume</Button>
-
-            <Link href="https://www.linkedin.com/in/kesara03"  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:white transition-colors transition-transform duration-10000 hover:scale-105 cursor-pointer">
-                <FaLinkedin className=" w-6 h-6" /> 
-            </Link>
-
-            <Link href="/page1" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:white transition-colors transition-transform duration-10000 hover:scale-105 cursor-pointer">
-                <FaGithub className=" w-6 h-6" /> 
-            </Link>
-
-            <Link
-                href="mailto:kesararathnasiri@gmail.com" 
-                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:white transition-colors transition-transform duration-10000 hover:scale-105 cursor-pointer"
-              >
-                <FaEnvelope className="w-6 h-6" />
-              </Link>
-
-          </motion.div>
-
-          </section>
-
-
-          <motion.section
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-          className="space-y-8"
-          >
-            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">Education</h2>
-
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Aug,2023 - Present</p>
-                  <p className="font-medium">Bachelor of Data Science for Business</p>
-                  <p className="text-blue-600 dark:text-blue-400">BI Norwegian Business School</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 text-sm dark:text-gray-400 text-sm">
-                I am a second year student at the BI Norwegian Business School, pursuing a Bachelor&apos;s degree in Data Science. My academic journey has been marked by a deep passion for data analysis and a commitment to leveraging data-driven insights to drive meaningful change.
-                </p>
-             </div>   
-          </motion.section>
-
-          <motion.section
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            className="space-y-8"
-          >
-            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
-              Working Papers
+      <section className="h-screen">
+        <WavyBackground>
+          <div className="text-center px-4">
+            <h1 className="text-white font-roboto text-4xl md:text-6xl font-bold leading-tight">
+              Mer salg uten mer styr
+            </h1>
+            <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight mt-2">
+              <span className="font-playfair italic">Vi kobler deg til </span>
+              <span className="font-roboto">kundene som betyr noe</span>
+            </h1>
+            <h2 className="mt-4 text-2xl md:text-3xl font-roboto font-medium text-white flex items-center justify-center gap-2">
+              Rett{" "}
+              <FlipWords
+                words={["kontakt", "tidspunkt", "beslutningstaker"]}
+                duration={2500}
+                className="text-white"
+              />
             </h2>
-            <div className="space-y-4">
-              {/* First Research Paper */}
-              <div className="p-4 border-l-4 border-rose-600 bg-gray-50 dark:bg-zinc-800 rounded-lg shadow hover:shadow-lg transition-all">
-              <h3 className="font-medium text-lg">
-                  Machine Learning for Predictive Maintenance of Winter Public Transport Delays in Oslo
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Jan 2025 – Present
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Supervisor: Dr. Uthayasanker Thayasivam, UOM
-                </p>
-              </div>
-
-              {/* Second Research Paper */}
-              <div className="p-4 border-l-4 border-rose-600 bg-gray-50 dark:bg-zinc-800 rounded-lg shadow hover:shadow-lg transition-all">
-              <h3 className="font-medium text-lg">
-                  Predicting Housing Price Volatility in Oslo: Modeling the Impact of Energy Shocks, Green Policies, and Urban Development using Adaptive ML
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Jan 2025 – Present
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Supervisor: Dr. Emil Aas Stoltenberg, BI | Contributors: Zara Razlan
-                </p>
-              </div>
+            <p className="text-white text-base md:text-lg mt-6 max-w-2xl mx-auto">
+              Vi analyserer markedet, identifiserer beslutningstakere og booker
+              kvalifiserte møter. Ingen bindingstid, ingen faste kostnader – kun
+              målbare resultater.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <HoverBorderGradient onClick={scrollToForm}>
+                Kontakt oss
+              </HoverBorderGradient>
             </div>
-          </motion.section>
+          </div>
+        </WavyBackground>
+      </section>
 
-          <motion.section
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-8"
-          >
-            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">Projects</h2>
+      <section className="min-h-screen flex items-center justify-center px-4 bg-black py-20">
+        <div className="max-w-4xl mx-auto font-jakarta text-center">
+          <TextGenerateEffect
+            words="Om oss:
+            Addvia bistår med hele salgsprosessen: Vi analyserer markedet, identifiserer relevante beslutningstakere og booker kvalifiserte møter med dem. Ved behov deltar vi også i selve møtene, og sørger for grundig forarbeid og effektiv oppfølging i etterkant. Tjenestene våre er tilpasset hver kunde og fokusert på å skape konkrete salgsmuligheter – uten faste kostnader eller bindingstid."
+          />
+        </div>
+      </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              <Card className="bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 cursor-pointer">
-                <CardContent className="p-4">
-                  <Image src={image1} alt="Project 1" className="rounded-lg mb-4" />
+      <section className="min-h-screen flex items-center justify-center px-4 bg-black py-20 mb-32">
+        <div className="max-w-4xl mx-auto font-jakarta text-center">
+          <TextGenerateEffect
+            words="Våre tjenester:
+            Addvia AS er et spesialisert salgskonsulentselskap og en integrert del av det proprietære investeringsselskapet Stax Capital. Vi skaper varige forbindelser mellom våre kunder og deres marked. Vår styrke ligger i faglig tyngde der vi kombinerer strategisk innsikt med operativ gjennomføring for å levere målbare salgsresultater."
+          />
+        </div>
+      </section>
 
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-medium">Healthcare Analytics Dashboard</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Power BI, DAX, M, Power Query, SQL Server, Excel</p>
-                    </div>
+      <section id="kontakt-skjema" ref={formRef} className="bg-black py-20 px-4">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-white text-3xl font-bold mb-8 text-center">
+            Kontakt oss
+          </h2>
 
-                    <Button variant="ghost" size="icon">→</Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 cursor-pointer">
-                <CardContent className="p-4">
-                  <Image src={image2} alt="Project 1" className="rounded-lg mb-4" />
-
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-medium">Sales Analytics Dashboard</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Power BI, DAX, Power Query, SQL Server, Excel</p>
-                    </div>
-
-                    <Button variant="ghost" size="icon">→</Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 cursor-pointer">
-                <CardContent className="p-4">
-                  <Image src={image3} alt="Project 1" className="rounded-lg mb-4" />
-
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-medium">Flight Delay Analysis</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Python & R</p>
-                    </div>
-
-                    <Button variant="ghost" size="icon">→</Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-
-            </div>
-          
-          </motion.section>
-
-          <motion.section
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-          className="space-y-8"
-          
-          >
-            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">Experience</h2>
-
-            {/* NEW EXPERIENCE ENTRY - ADDED ABOVE RESEARCH ASSISTANT */}
-            <div className="space-y-8">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">March,2025 - Present</p>
-                  <p className="font-medium">Data Science Intern | Contract </p>
-                  <p className="text-blue-600 dark:text-blue-400">STAX Capital AS</p>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {["fornavn", "etternavn"].map((field) => (
+                <div key={field}>
+                  <Label htmlFor={field} className="text-lg capitalize">
+                    {field === "fornavn" ? "Fornavn" : "Etternavn"}
+                  </Label>
+                  <Input
+                    id={field}
+                    name={field}
+                    type="text"
+                    placeholder={field === "fornavn" ? "Ditt fornavn" : "Ditt etternavn"}
+                    value={formData[field as keyof typeof formData]}
+                    onChange={handleChange}
+                    className={errors[field as keyof typeof errors] ? "border-red-500" : ""}
+                  />
+                  {errors[field as keyof typeof errors] && (
+                    <p className="text-red-500 text-sm mt-1">{errors[field as keyof typeof errors]}</p>
+                  )}
                 </div>
-              </div>
-              
-              <p className="text-gray-600 text-sm dark:text-gray-400">
-                Leveraging Python and machine learning frameworks to analyze large datasets, design scalable data pipelines, 
-                and generate predictive models and actionable insights that drive strategic decision-making and operational efficiency.
-              </p>
+              ))}
             </div>
 
-
-            <div className="space-y-8">
-                <div className="flex items-center justify-between">
-                  <div className="space-y-1">
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Jan,2025 - Present</p>
-                    <p className="font-medium">Research Assistant - Intern | Remote</p>
-                    <p className="text-blue-600 dark:text-blue-400">DataSEARCH, University of Moratuwa</p>
-                  </div>
-                </div>
-                
-                {/* First Paragraph - No Indentation */}
-                <p className="text-gray-600 text-sm dark:text-gray-400">
-                  Collaborating with a supervisor at DataSEARCH to develop a research publication addressing a real-world data science problem. Conducting end-to-end data analysis, leveraging advanced statistical and machine learning techniques to derive actionable insights from complex datasets.
-                </p>
-
-                <div className="space-y-2">
-                {/* Indented Sections */}
-                <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
-                  textIndent: '-1.2em',
-                  paddingLeft: '1.2em'
-                }}>
-                  - Identifying and defining a real-world data science problem, contributing to the development of a research publication aimed at addressing industry-relevant challenges.
-                </p>
-
-                <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
-                  textIndent: '-1.2em',
-                  paddingLeft: '1.2em'
-                }}>
-                  - Executing comprehensive data analysis processes, including data cleaning, preprocessing, feature engineering, and model building, ensuring high-quality and reliable results.
-                </p>
-
-                <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
-                  textIndent: '-1.2em',
-                  paddingLeft: '1.2em'
-                }}>
-                  - Applying machine learning algorithms and statistical methods to analyze datasets, uncovering patterns and trends that inform data-driven decision-making.
-                </p>
-
-                <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
-                  textIndent: '-1.2em',
-                  paddingLeft: '1.2em'
-                }}>
-                  - Creating clear and impactful visualizations to present findings, enabling stakeholders to easily interpret complex data insights.
-                </p>
-
-                <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
-                  textIndent: '-1.2em',
-                  paddingLeft: '1.2em'
-                }}>
-                  - Preparing and structuring research results for publication, contributing to the academic community and potential real-world implementation.
-                </p>
-                </div>
+            {[
+              { name: "epost", label: "E-post", type: "email", placeholder: "Din e-postadresse" },
+              { name: "telefon", label: "Telefonnummer", type: "tel", placeholder: "Ditt telefonnummer" },
+              { name: "firma", label: "Firma", type: "text", placeholder: "Firma du representerer" },
+            ].map(({ name, label, type, placeholder }) => (
+              <div key={name}>
+                <Label htmlFor={name} className="text-lg">
+                  {label}
+                </Label>
+                <Input
+                  id={name}
+                  name={name}
+                  type={type}
+                  placeholder={placeholder}
+                  value={formData[name as keyof typeof formData]}
+                  onChange={handleChange}
+                  className={errors[name as keyof typeof errors] ? "border-red-500" : ""}
+                />
+                {errors[name as keyof typeof errors] && (
+                  <p className="text-red-500 text-sm mt-1">{errors[name as keyof typeof errors]}</p>
+                )}
               </div>
+            ))}
 
-            <div className="space-y-8">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Sep,2024 - Present</p>
-                  <p className="font-medium">Class Representative</p>
-                  <p className="text-blue-600 dark:text-blue-400">Bachelor of Data Science for Business</p>
-                </div>
-              </div>
-              
-              
-              <p className="text-gray-600 text-sm dark:text-gray-400">
-                As the Class Representative for the Bachelor of Data Science for Business program, I serve as the primary liaison between students and faculty, ensuring effective communication and fostering a collaborative academic environment. In this role, I actively gather and articulate student feedback, address concerns, and work closely with academic staff to enhance the overall learning experience.
-              </p>
+            <div>
+              <Label htmlFor="melding" className="text-lg">
+                Melding
+              </Label>
+              <textarea
+                id="melding"
+                name="melding"
+                rows={5}
+                placeholder="Hva gjelder henvendelsen?"
+                value={formData.melding}
+                onChange={handleChange}
+                className={`w-full rounded-md bg-gray-50 px-3 py-2 text-sm text-black dark:bg-zinc-800 dark:text-white focus-visible:ring-2 focus-visible:ring-neutral-400 focus:outline-none ${
+                  errors.melding ? "border border-red-500" : ""
+                }`}
+              />
+              {errors.melding && (
+                <p className="text-red-500 text-sm mt-1">{errors.melding}</p>
+              )}
             </div>
 
-            <div className="space-y-8">
-                <div className="flex items-center justify-between">
-                  <div className="space-y-1">
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Jul,2024 - Present</p>
-                    <p className="font-medium">Junior Analyst</p>
-                    <p className="text-blue-600 dark:text-blue-400">BISO Invest Capital Management</p>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <p className="text-gray-600 dark:text-gray-400 text-sm" style={{ 
-                    textIndent: '-1.2em',
-                    paddingLeft: '1.2em'
-                  }}>
-                    - Conducting in-depth research and financial analysis of companies, assessing market position, financial health, and growth potential to support investment decisions.
-                  </p>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm" style={{ 
-                    textIndent: '-1.2em',
-                    paddingLeft: '1.2em'
-                  }}>
-                    - Collaborating with a team of 3 other Junior Analysts and a Senior Analyst to compile comprehensive investment reports and develop persuasive investment pitches.
-                  </p>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm" style={{ 
-                    textIndent: '-1.2em',
-                    paddingLeft: '1.2em'
-                  }}>
-                    - Presenting recommendations for company inclusion in the fund&apos;s portfolio to aid strategic investment decisions
-                  </p>
-                </div>
-              </div>
-
-            {/* Financial Manager Section */}
-              <div className="space-y-8">
-                <div className="flex items-center justify-between">
-                  <div className="space-y-1">
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Jul,2024 - Aug,2024</p>
-                    <p className="font-medium">Financial Manager</p>
-                    <p className="text-blue-600 dark:text-blue-400">Data Science for Business Academic Association</p>
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
-                    textIndent: '-1.2em',
-                    paddingLeft: '1.2em'
-                  }}>
-                    - Managed the Financial operations of the Data Science for Business academic association, ensuring accurate and timely
-                    budgeting for 120+ students&apos; events activities. 
-                  </p>
-                  
-                  <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
-                    textIndent: '-1.2em',
-                    paddingLeft: '1.2em'
-                  }}>
-                    - Coordinated with five board members to plan and execute events within budget, including quiz and dinner mingle.
-                  </p>
-                  
-                  <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
-                    textIndent: '-1.2em',
-                    paddingLeft: '1.2em'
-                  }}>
-                    - Promoted the association during recruitment and open days to inform students about its role and activities.
-                  </p>
-                </div>
-              </div>
-
-              {/* Logistics Manager Section */}
-              <div className="space-y-8">
-                <div className="flex items-center justify-between">
-                  <div className="space-y-1">
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Aug,2024 - Dec,2024</p>
-                    <p className="font-medium">Logistics Manager</p>
-                    <p className="text-blue-600 dark:text-blue-400">BISO Charity</p>
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
-                    textIndent: '-1.2em',
-                    paddingLeft: '1.2em'
-                  }}>
-                    - Coordinated with the Manger to ensure smooth execution of events, managing logistics from planning to implementation. 
-                  </p>
-                
-                  <p className="text-gray-600 text-sm dark:text-gray-400" style={{ 
-                    textIndent: '-1.2em',
-                    paddingLeft: '1.2em'
-                  }}>
-                    - Developed and maintained relationships with vendors and venues, overseeing equipment setup and troubleshooting issues to enhance the overall experience for students.
-                  </p>
-                </div>
-              </div>
-
-            <p className="text-grey-500">© 2025 Kesara Rathnasiri</p>
-
-
-           </motion.section>
-
-            {/* Scroll to Top Button */}
-                {showScrollButton && (
-              <motion.button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="fixed bottom-4 right-4 p-3 pl-4 pr-5 rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white shadow-lg hover:scale-105 transition-transform z-50 flex items-center gap-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                aria-label="Scroll to top"
-              >
-                <span>↑</span>
-                <span className="text-sm">Scroll to Top</span>
-              </motion.button>
-            )}
-        
-        </main>
+            <div className="flex justify-center">
+              <HoverBorderGradient>Send inn</HoverBorderGradient>
+            </div>
+          </form>
+        </div>
+      </section>
+      {/* Short centered divider line */}
+            <div className="flex justify-center my-4">
+        <div className="w-[990px] h-px bg-gray-700"></div>
       </div>
-    </div>
+
+
+
+    
+      <footer className="bg-black text-center py-6 text-sm text-gray-400 space-y-2">
+  <p>©2025 Addvia AS. All rights reserved.</p>
+  <p>
+    Built by {" "}
+    <a
+      href="https://www.linkedin.com/in/kesara03/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-gray-300 hover:text-white underline transition duration-200"
+    >
+      Kesara Rathnasiri
+    </a>
+  </p>
+</footer>
+
+
+    </main>
   );
 }
-
