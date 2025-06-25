@@ -134,7 +134,7 @@ export default function Home() {
         <WavyBackground>
           <div className="text-center px-4">
             <h1 className="text-white font-roboto text-4xl md:text-6xl font-bold leading-tight">
-              Mer salg uten mer styre på din side.
+              Mer salg uten mer styr
             </h1>
             <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight mt-2">
               <span className="font-playfair italic">Vi kobler deg til </span>
