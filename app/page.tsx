@@ -118,7 +118,7 @@ export default function Home() {
   animate={{ opacity: formInView ? 0 : 1 }}
   transition={{ duration: 0.5 }}
 >
-  <div className="flex justify-center items-center">
+  <div className="flex justify-start items-center">
     <Image
       src="/logo.png"
       alt="ADDVIA Logo"
