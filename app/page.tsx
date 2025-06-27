@@ -133,7 +133,7 @@ export default function Home() {
       <section className="h-screen">
         <WavyBackground>
           <div className="text-center px-4">
-            <h1 className="text-white font-roboto text-xl sm:text-4xl md:text-6xl font-bold leading-tight whitespace-nowrap">
+            <h1 className="text-white font-roboto text-2xl sm:text-4xl md:text-6xl font-bold leading-tight whitespace-nowrap">
               Mer salg uten mer styr
             </h1>
             <h1 className="text-white text-xl sm:text-3xl md:text-6xl font-bold leading-tight mt-2 whitespace-nowrap">
