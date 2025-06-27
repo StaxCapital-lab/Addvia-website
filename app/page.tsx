@@ -172,7 +172,7 @@ export default function Home() {
       </section>
 
       <section className="min-h-screen flex items-center justify-center px-4 bg-black py-20 mb-32">
-        <div className="max-w-4xl mx-auto font-jakarta text-center text-sm sm:text-base md:text-base">
+        <div className="max-w-4xl mx-auto font-jakarta text-center text-base sm:text-base md:text-2xl">
           <TextGenerateEffect
             words="
             Addvia AS er et spesialisert salgskonsulentselskap og en integrert del av det proprietære investeringsselskapet Stax Capital. Vi skaper varige forbindelser mellom våre kunder og deres marked. Vår styrke ligger i faglig tyngde der vi kombinerer strategisk innsikt med operativ gjennomføring for å levere målbare salgsresultater."
