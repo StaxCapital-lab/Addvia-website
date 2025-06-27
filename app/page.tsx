@@ -165,7 +165,7 @@ export default function Home() {
       <section className="min-h-screen flex items-center justify-center px-4 bg-black py-20">
         <div className="max-w-4xl mx-auto font-jakarta text-center">
           <TextGenerateEffect
-            words="Om oss:
+            words="
             Addvia bistår med hele salgsprosessen: Vi analyserer markedet, identifiserer relevante beslutningstakere og booker kvalifiserte møter med dem. Ved behov deltar vi også i selve møtene, og sørger for grundig forarbeid og effektiv oppfølging i etterkant. Tjenestene våre er tilpasset hver kunde og fokusert på å skape konkrete salgsmuligheter – uten faste kostnader eller bindingstid."
           />
         </div>
@@ -174,7 +174,7 @@ export default function Home() {
       <section className="min-h-screen flex items-center justify-center px-4 bg-black py-20 mb-32">
         <div className="max-w-4xl mx-auto font-jakarta text-center">
           <TextGenerateEffect
-            words="Våre tjenester:
+            words="
             Addvia AS er et spesialisert salgskonsulentselskap og en integrert del av det proprietære investeringsselskapet Stax Capital. Vi skaper varige forbindelser mellom våre kunder og deres marked. Vår styrke ligger i faglig tyngde der vi kombinerer strategisk innsikt med operativ gjennomføring for å levere målbare salgsresultater."
           />
         </div>
