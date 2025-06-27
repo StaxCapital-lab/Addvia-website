@@ -136,7 +136,7 @@ export default function Home() {
             <h1 className="text-white font-roboto text-2xl sm:text-4xl md:text-6xl font-bold leading-tight whitespace-nowrap">
               Mer salg uten mer styr
             </h1>
-            <h1 className="text-white text-2xl sm:text-3xl md:text-6xl font-bold leading-tight mt-2 whitespace-nowrap">
+            <h1 className="text-white text-xl sm:text-3xl md:text-6xl font-bold leading-tight mt-2 whitespace-nowrap">
               <span className="font-playfair italic">Vi kobler deg til </span>
               <span className="font-roboto">kundene som betyr noe</span>
             </h1>
