@@ -2,7 +2,7 @@ import "./globals.css";
 import { ReactNode } from "react";
 
 export const metadata = {
-  title: "My New Website",
+  title: "Addvia AS",
   description: "Wavy background landing page",
 };
 
