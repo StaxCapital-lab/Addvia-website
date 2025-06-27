@@ -162,7 +162,7 @@ export default function Home() {
         </WavyBackground>
       </section>
 
-      <section className="min-h-screen flex items-center justify-center px-4 bg-black py-20">
+      <section className="min-h-screen flex items-center justify-center px-4 bg-black py-20 whitespace-normal">
         <div className="max-w-4xl mx-auto font-jakarta text-center">
           <TextGenerateEffect
             words="
