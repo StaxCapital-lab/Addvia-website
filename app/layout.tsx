@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 export const metadata = {
   title: "Addvia AS",
-  description: "Wavy background landing page",
+  description: "Vi skaper kvalifiserte salgsmuligheter gjennom møtebooking, rådgivning og markedsanalyse uten bindingstid.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
