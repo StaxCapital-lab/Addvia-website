@@ -133,10 +133,10 @@ export default function Home() {
       <section className="h-screen">
         <WavyBackground>
           <div className="text-center px-4">
-            <h1 className="text-white font-roboto text-4xl sm:text-4xl md:text-6xl font-bold leading-tight whitespace-nowrap">
+            <h1 className="text-white font-roboto text-xl sm:text-4xl md:text-6xl font-bold leading-tight whitespace-nowrap">
               Mer salg uten mer styr
             </h1>
-            <h1 className="text-white text-4xl sm:text-3xl md:text-6xl font-bold leading-tight mt-2 whitespace-nowrap">
+            <h1 className="text-white text-xl sm:text-3xl md:text-6xl font-bold leading-tight mt-2 whitespace-nowrap">
               <span className="font-playfair italic">Vi kobler deg til </span>
               <span className="font-roboto">kundene som betyr noe</span>
             </h1>
@@ -148,7 +148,7 @@ export default function Home() {
                 className="text-white"
               />
             </h2>
-            <p className="text-white text-base md:text-lg mt-6 max-w-2xl mx-auto">
+            <p className="text-white text-base md:text-lg mt-6 max-w-2xl mx-auto whitespace-normal">
               Vi analyserer markedet, identifiserer beslutningstakere og booker
               kvalifiserte møter. Ingen bindingstid, ingen faste kostnader – kun
               målbare resultater.
