@@ -163,7 +163,7 @@ export default function Home() {
       </section>
 
       <section className="min-h-screen flex items-center justify-center px-4 bg-black py-20">
-        <div className="max-w-4xl mx-auto font-jakarta text-center">
+        <div className="text-base sm:text-lg md:text-xl font-jakarta text-center">
           <TextGenerateEffect
             words="
             Addvia bistår med hele salgsprosessen: Vi analyserer markedet, identifiserer relevante beslutningstakere og booker kvalifiserte møter med dem. Ved behov deltar vi også i selve møtene, og sørger for grundig forarbeid og effektiv oppfølging i etterkant. Tjenestene våre er tilpasset hver kunde og fokusert på å skape konkrete salgsmuligheter – uten faste kostnader eller bindingstid."
