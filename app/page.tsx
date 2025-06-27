@@ -130,24 +130,23 @@ export default function Home() {
 </motion.header>
 
 
-      <section className="h-screen">
-        <WavyBackground>
-          <div className="text-center px-4">
-            <h1 className="text-white font-roboto text-4xl md:text-6xl font-bold leading-tight">
-              Mer salg uten mer styr
-            </h1>
-            <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight mt-2">
-              <span className="font-playfair italic">Vi kobler deg til </span>
-              <span className="font-roboto">kundene som betyr noe</span>
-            </h1>
-            <h2 className="mt-4 text-2xl md:text-3xl font-roboto font-medium text-white flex items-center justify-center gap-2">
-              Rett{" "}
-              <FlipWords
-                words={["kontakt", "tidspunkt", "beslutningstaker"]}
-                duration={2500}
-                className="text-white"
-              />
-            </h2>
+<section className="h-screen">
+  <WavyBackground>
+    <div className="text-center px-4">
+      <h1 className="text-white font-roboto text-3xl sm:text-4xl md:text-6xl font-bold leading-snug whitespace-nowrap">
+        Mer salg uten mer styr
+      </h1>
+      <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-playfair italic mt-4 leading-snug whitespace-normal">
+        Vi kobler deg til kundene som betyr noe
+      </h1>
+      <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl font-roboto font-medium text-white flex items-center justify-center gap-2 whitespace-nowrap">
+        Rett{" "}
+        <FlipWords
+          words={["kontakt", "tidspunkt", "beslutningstaker"]}
+          duration={2500}
+          className="text-white"
+        />
+      </h2>
             <p className="text-white text-base md:text-lg mt-6 max-w-2xl mx-auto">
               Vi analyserer markedet, identifiserer beslutningstakere og booker
               kvalifiserte møter. Ingen bindingstid, ingen faste kostnader – kun
