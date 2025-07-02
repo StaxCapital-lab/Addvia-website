@@ -285,7 +285,7 @@ export default function Home() {
       </div>
 
       <footer className="bg-black text-center py-6 text-sm text-gray-400 space-y-2">
-        <p>©2025 Addvia AS. All rights reserved.</p>
+        <p>©2025 Addvia AS.</p>
         <p>
           Built by{" "}
           <a
