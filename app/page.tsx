@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
@@ -10,7 +10,6 @@ import { Label } from "@/components/ui/label";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -35,7 +34,20 @@ export default function Home() {
     triggerOnce: false,
     threshold: 0.2,
   });
-  
+
+  // 👇 New state to control logo visibility on mobile
+  const [isMobileLogoHidden, setIsMobileLogoHidden] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth < 768) {
+        setIsMobileLogoHidden(window.scrollY > 30); // Hide logo if scrolled down 30px
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const validate = () => {
     const newErrors = {
@@ -113,22 +125,30 @@ export default function Home() {
   return (
     <main className="bg-black text-white">
       <motion.header
-  className="fixed top-0 left-0 w-full z-50 bg-transparent py-4 px-9"
-  initial={{ opacity: 1 }}
-  animate={{ opacity: formInView ? 0 : 1 }}
-  transition={{ duration: 0.5 }}
->
-  <div className="flex justify-start items-center">
-    <Image
-      src="/logo.png"
-      alt="ADDVIA Logo"
-      width={160}
-      height={40}
-      priority
-    />
-  </div>
-</motion.header>
-
+        className="fixed top-0 left-0 w-full z-50 bg-transparent py-4 px-9"
+        initial={{ opacity: 1 }}
+        animate={{
+          opacity:
+            typeof window !== "undefined" && window.innerWidth < 768
+              ? isMobileLogoHidden
+                ? 0
+                : 1
+              : formInView
+              ? 0
+              : 1,
+        }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="flex justify-start items-center">
+          <Image
+            src="/logo.png"
+            alt="ADDVIA Logo"
+            width={160}
+            height={40}
+            priority
+          />
+        </div>
+      </motion.header>
 
       <section className="h-screen">
         <WavyBackground>
@@ -259,30 +279,25 @@ export default function Home() {
           </form>
         </div>
       </section>
-      {/* Short centered divider line */}
-            <div className="flex justify-center my-4">
+
+      <div className="flex justify-center my-4">
         <div className="w-[990px] h-px bg-gray-700"></div>
       </div>
 
-
-
-    
       <footer className="bg-black text-center py-6 text-sm text-gray-400 space-y-2">
-  <p>©2025 Addvia AS. All rights reserved.</p>
-  <p>
-    Built by {" "}
-    <a
-      href="https://www.linkedin.com/in/kesara03/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-gray-300 hover:text-white underline transition duration-200"
-    >
-      Kesara Rathnasiri
-    </a>
-  </p>
-</footer>
-
-
+        <p>©2025 Addvia AS. All rights reserved.</p>
+        <p>
+          Built by{" "}
+          <a
+            href="https://www.linkedin.com/in/kesara03/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-white underline transition duration-200"
+          >
+            Kesara Rathnasiri
+          </a>
+        </p>
+      </footer>
     </main>
   );
 }
